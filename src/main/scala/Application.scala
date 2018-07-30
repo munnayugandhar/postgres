@@ -11,6 +11,7 @@ class Application extends App {
     val con_st = "jdbc:postgresql://localhost:5432/postgres?user=postgres&password=postgres"
     DriverManager.getConnection(con_st)
   }
+
   val prop = new Properties()
     prop.put("bootstrap.servers", "localhost:9092")
     prop.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
