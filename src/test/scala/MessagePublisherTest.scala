@@ -1,5 +1,6 @@
 import scala.collection.JavaConversions._
 
+
 class MessagePublisherTest extends org.scalatest.FunSpec {
 
     describe("sendMessage") {
@@ -9,7 +10,7 @@ class MessagePublisherTest extends org.scalatest.FunSpec {
         val input = List("value1", "value2", "value3")
         SUT.sendMessage(input)
         input.foreach(v => {
-          mockProducer.receivedMessages.toList.map(m => {m.value()}).contains(v)
+          assert(mockProducer.receivedMessages.toList.map(m => {m.value()}).contains(v))
         })
       }
 
